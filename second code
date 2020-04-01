@@ -1,0 +1,23 @@
+def funct(nestedDict,dic,currentKey):
+    for key in nestedDict.keys():
+        if type(nestedDict[key])==int:
+            Dic[(currentKey+"."+key)]=nestedDict[key]
+        else:         
+         Dic=funct(nestedDict[key],Dic,(currentKey+"."+key).strip('.'))
+         return Dic
+         def function_dic(nestedDic):
+             return funct(nestedDic,dict(),"")
+def main():
+    nestedDictionary={
+        "key":3,
+        "foo":{
+        "a":5,
+        "bar":{
+            "baz":8
+            }
+        }
+        }
+    dicten=function_dic(nestedDictionary)
+    print(dicten)
+    if _names_=="_main_":
+        main()
